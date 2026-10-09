@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HS WebTech | WordPress and Website Developer in Khandala, Satara</title>
+<meta name="description" content="Hasina Shaikh builds fast, mobile-friendly WordPress websites for small businesses, schools, clinics and shops in Satara, Kolhapur and Pune.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f172a;       /* logo navy */
+  --blue:#38bdf8;      /* logo sky blue */
+  --blue-dark:#0ea5e9;
+  --blue-text:#0369a1; /* darker blue for small text, readable on white */
+  --saffron:#f2a33a;   /* warm accent */
+  --paper:#f4f7fc;
+  --line:#dbe3f0;
+  --muted:#52607a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:3px}
+
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:70px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;text-decoration:none;color:var(--ink)}
+.brand img{height:44px;width:auto;display:block}
+.brand span{color:var(--blue-text)}
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:.94rem}
+nav a:hover{color:var(--blue-text)}
+.btn{display:inline-block;padding:12px 24px;border-radius:8px;font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit}
+.btn-blue{background:var(--blue);color:var(--ink)}
+.btn-blue:hover{background:var(--blue-dark)}
+.btn-out{border-color:var(--ink);color:var(--ink)}
+.btn-out:hover{background:var(--ink);color:#fff}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:8px 12px;font:inherit;font-weight:600;cursor:pointer}
+
+/* hero */
+.hero{padding:80px 0 72px;background:linear-gradient(180deg,var(--paper),#fff)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,4.8vw,3.5rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:32em;margin-bottom:28px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.hero .meta{font-size:.92rem;color:var(--muted)}
+.hero .meta b{color:var(--ink)}
+/* logo card */
+.logo-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 22px 50px rgba(15,23,42,.12);text-align:center}
+.logo-card img{width:100%;max-width:320px;height:auto;display:block;margin:0 auto}
+
+section{padding:78px 0}
+h2.title{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;letter-spacing:-.01em;margin-bottom:12px}
+.sub{color:var(--muted);max-width:40em;margin-bottom:40px}
+.alt{background:var(--paper)}
+
+/* services as ruled rows */
+.rows{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--line)}
+.row h3{font-size:1.12rem}
+.row p{color:var(--muted)}
+
+/* audience */
+.who{display:flex;flex-wrap:wrap;gap:10px}
+.who span{background:#fff;border:1px solid var(--line);padding:9px 18px;border-radius:30px;font-weight:600;font-size:.95rem}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 48px}
+.why h3{font-size:1.08rem;margin-bottom:6px;padding-left:14px;border-left:4px solid var(--saffron)}
+.why p{color:var(--muted);font-size:.96rem}
+
+/* process (a real sequence) */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{border-top:3px solid var(--blue);padding-top:14px;counter-increment:s}
+.step::before{content:counter(s);display:block;font-weight:800;font-size:1.6rem;color:var(--blue-text);line-height:1;margin-bottom:8px}
+.step h3{font-size:1.02rem;margin-bottom:4px}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+.contact dt{font-weight:700;margin-top:16px}
+.contact dd{color:var(--muted)}
+.contact dd a{color:var(--blue-text);font-weight:600}
+form.msg{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+form.msg label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px}
+form.msg input,form.msg textarea{width:100%;padding:11px 13px;border:1px solid #c9d3e4;border-radius:7px;font:inherit;margin-bottom:16px}
+form.msg textarea{min-height:120px;resize:vertical}
+
+footer{background:var(--ink);color:#b8c4db;padding:26px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero .wrap,.contact{grid-template-columns:1fr}
+  .row,.why{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:12px 20px 20px}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:flex-start;gap:14px}
+  section{padding:58px 0}
+  .hero{padding:52px 0}
+}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="brand"><img src="images/hs-webtech-icon.png" alt="" height="44">HS <span>WebTech</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">How I work</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-blue" href="#contact">Get a quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Fast, mobile-friendly websites for your business.</h1>
+        <p class="lead">I am Hasina Shaikh, a WordPress and web developer in Khandala, Satara. I build and look after websites for small businesses, schools, clinics and shops.</p>
+        <div class="actions">
+          <a class="btn btn-blue" href="#contact">Get a clear plan and quote</a>
+          <a class="btn btn-out" href="#services">See services</a>
+        </div>
+        <p class="meta"><b>5+ years</b> of experience &nbsp;|&nbsp; Rated <b>5.0</b> on Google &nbsp;|&nbsp; English, Marathi, Hindi</p>
+      </div>
+      <div class="logo-card">
+        <img src="images/hs-webtech-logo.png" alt="HS WebTech: Web, Design, Technology" width="461" height="515">
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <h2 class="title">What I can do for you</h2>
+      <p class="sub">From a first website to fixing and maintaining one you already have.</p>
+      <div class="rows">
+        <div class="row"><h3>Business websites</h3><p>A clear, professional website that shows what you offer and makes it easy for customers to contact you.</p></div>
+        <div class="row"><h3>Online stores</h3><p>Sell your products online with a simple store that is easy for you to manage and easy for customers to use.</p></div>
+        <div class="row"><h3>Website redesign</h3><p>Give an old website a fresh look that works well on phones, without losing your content.</p></div>
+        <div class="row"><h3>Speed and security fixes</h3><p>Make a slow website faster and protect it from common problems.</p></div>
+        <div class="row"><h3>Online payments</h3><p>Set up payment options so customers can pay you on your website.</p></div>
+        <div class="row"><h3>Enquiry and admission forms</h3><p>Collect enquiries, bookings or school admissions online, and get them straight to you.</p></div>
+        <div class="row"><h3>Ongoing maintenance</h3><p>Updates, backups and support, so you can focus on your work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / WHO -->
+  <section id="about" class="alt">
+    <div class="wrap">
+      <h2 class="title">Who I work with</h2>
+      <p class="sub">I work with clients across Satara, Kolhapur, Pune and nearby areas.</p>
+      <div class="who" style="margin-bottom:56px">
+        <span>Small businesses</span><span>Schools</span><span>Clinics</span><span>Shops</span><span>Institutions</span>
+      </div>
+      <h2 class="title">Why work with me</h2>
+      <p class="sub">You deal with one developer from the first call to launch and after.</p>
+      <div class="why">
+        <div><h3>Over 5 years of experience</h3><p>I have been building WordPress and web projects for more than five years.</p></div>
+        <div><h3>Fast and mobile-friendly</h3><p>Your site is built to load quickly and look right on every phone.</p></div>
+        <div><h3>Your language</h3><p>We can talk in English, Marathi or Hindi, whichever is easiest for you.</p></div>
+        <div><h3>A clear plan and quote</h3><p>You know what you will get and what it costs before we start.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <h2 class="title">How we work together</h2>
+      <p class="sub">Four simple steps, with no surprises.</p>
+      <div class="steps">
+        <div class="step"><h3>Talk</h3><p>Tell me about your business and what you need.</p></div>
+        <div class="step"><h3>Plan and quote</h3><p>I send a clear plan, timeline and price.</p></div>
+        <div class="step"><h3>Build</h3><p>I design and build your website and share it for your feedback.</p></div>
+        <div class="step"><h3>Launch and support</h3><p>Your site goes live, and I stay available to maintain it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="alt">
+    <div class="wrap contact">
+      <div>
+        <h2 class="title">Let's discuss your website</h2>
+        <p class="sub" style="margin-bottom:0">Send a short message about what you need. I will reply with a clear plan and quote.</p>
+        <dl>
+          <dt>Phone / WhatsApp</dt><dd><a href="tel:+917745812502">+91 77458 12502</a> &nbsp;|&nbsp; <a href="https://wa.me/917745812502" target="_blank" rel="noopener">Chat on WhatsApp</a></dd>
+          <dt>Email</dt><dd><a href="mailto:hasina94shaikh@gmail.com">hasina94shaikh@gmail.com</a></dd>
+          <dt>Address</dt><dd>Kisan Veer Chowk, near Jama Masjid, Khandala, Maharashtra 412802</dd>
+          <dd><a href="https://www.google.com/maps/search/?api=1&query=HS+WebTech+Khandala+Satara" target="_blank" rel="noopener">Get directions on Google Maps</a></dd>
+        </dl>
+      </div>
+      <form class="msg" id="quoteForm">
+        <label for="n">Your name</label>
+        <input id="n" type="text" required>
+        <label for="p">Phone number</label>
+        <input id="p" type="tel">
+        <label for="m">What do you need?</label>
+        <textarea id="m" required placeholder="For example: a website for my clinic with an appointment form"></textarea>
+        <button class="btn btn-blue" type="submit">Send enquiry</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> HS WebTech. All rights reserved.</span>
+    <span>Website designer in Khandala, Satara, Maharashtra</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// mobile menu
+var btn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
+btn.addEventListener('click', function(){
+  var open = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+});
+nav.addEventListener('click', function(e){ if(e.target.tagName === 'A') nav.classList.remove('open'); });
+
+// Contact form: opens the visitor's email app with the details filled in.
+document.getElementById('quoteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var to = 'hasina94shaikh@gmail.com';
+  var body = 'Name: ' + document.getElementById('n').value + '\nPhone: ' + document.getElementById('p').value + '\n\n' + document.getElementById('m').value;
+  location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Website enquiry') + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
